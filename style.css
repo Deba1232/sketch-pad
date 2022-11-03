@@ -37,9 +37,11 @@ main .draw-area{
 }
 .draw-area .containers{
    display: flex;
+   flex-wrap: wrap;
+
 }
 .containers div{
     height: 1em;
-    width: 1em;
+    width: 11em;
     border: 2px solid;
 }
