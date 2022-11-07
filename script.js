@@ -1,10 +1,10 @@
 let drawArea = document.querySelector('.draw-area');
-let slider = document.querySelector('.slider');
+let slider = document.querySelector('.draw-space-initialization .slidecontainer');
 
-let cellCount = 200;
-drawArea.innerHTML = '';
+let cellCount = 24;
+// drawArea.innerHTML = '';
 
-for (i = 0;i < cellCount * cellCount;i++){
+for (i = 0; i < cellCount * cellCount; i++) {
     let divNode = document.createElement('div');
     drawArea.appendChild(divNode);
 }
@@ -14,36 +14,30 @@ let cellDimension = drawArea.clientHeight / cellCount;
 
 cells.forEach((cell) => {
     cell.style.height = `${cellDimension}px`;
-    cell.style.flexBasis = `${cellDimension}px`;
+    cell.style.width = `${cellDimension}px`;
     cell.style.backgroundColor = '#ffff00';
 });
 
-let mouseState = 'mousup';
+let mouseUpEvent = true;
 
-drawArea.addEventListener('mouseover',function(e){
-    console.log(e.type);
-    
-    if (mouseState==='mousedown'){
-        e.target.style.background = '#000000';
+drawArea.addEventListener('mousedown', (e) => {
+    e.target.style.backgroundColor = '#000000';
+    mouseUpEvent = false;
+});
+drawArea.addEventListener('mouseover', (e) => {
+    // console.log(`${e.type} ${mouseUpEvent}`);
+    if (mouseUpEvent === false) {
+        e.target.style.backgroundColor = '#000000';
     }
+});
+drawArea.addEventListener('mouseout', (e) => {
+    // console.log(`${e.type} ${mouseUpEvent}`);
+    if (mouseUpEvent === false) {
+        e.target.style.backgroundColor = '#000000';
+    }
+});
+drawArea.addEventListener('mouseup', (e) => {
+    mouseUpEvent = true;
+});
 
-    // else{
-    //     e.target.style.background = '#ffffcc';
-    // }
-});
-drawArea.addEventListener('mouseout', function (e) {
-    console.log(e.type);
-
-    // if (mouseState === 'mousup') {
-    //     e.target.style.background = '#ffff00';
-    // }
-});
-drawArea.addEventListener('mousedown', function (e) {
-    console.log(e.type);;
-    e.target.style.background = '#000000';
-    mouseState = 'mousedown';
-});
-drawArea.addEventListener('mouseup', function (e) {
-    console.log(e.type);
-    mouseState = 'mousup';
-});
+slider.innerHTML += '<p>24*24</p>';
