@@ -11,20 +11,27 @@
 <body>
     
     <header>
-        Sketch-Pad
+        Sketch Pad
     </header>
 
     <main>
 
         <div class="draw-space-initialization">
             <div class="buttons">
-            
-                <button class="Black">Black</button>
+                <div class="pen-color-card">
+                    <input type="color" class="pen-color">
+                    <label for="pen-color">Pen Color</label>
+                </div>
+
+                <div class="canvas-color-card">
+                    <input type="color" name="bg-color" class="bg-color" value="#ffffff">
+                    <label for="bg-color">Canvas Color</label>
+                </div>
             
             </div>
             
             <div class="slidecontainer">
-                <input type="range" min="1" max="60" value="1" class="slider">
+                <input type="range" min="1" max="70" value="25" class="slider">
             </div>
         </div>
 
