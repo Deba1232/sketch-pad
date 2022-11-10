@@ -1,6 +1,17 @@
 let canvasColor = document.querySelector('.draw-space-initialization .bg-color');
-canvasColor.addEventListener('click', (e) => {
-    console.log(e.target.value);
+canvasBgColor();
+
+canvasColor.addEventListener('input', () => {
+    canvasBgColor();
+    sketchLogic(slider.value);
+});
+
+let drawColor = document.querySelector('.draw-space-initialization .pen-color');
+penColor();
+
+drawColor.addEventListener('change', () => {
+    penColor();
+    sketchLogic(slider.value);
 });
 
 let slideContainer = document.querySelector('.draw-space-initialization .slidecontainer');

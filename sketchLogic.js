@@ -1,5 +1,13 @@
 let drawArea = document.querySelector('.draw-area');
 
+function canvasBgColor(){
+    return canvasColor.value;
+}
+
+function penColor() {
+    return drawColor.value;
+}
+
 function sketchLogic(cellCount) {
 
     let divs = drawArea.querySelectorAll('div');
@@ -7,35 +15,35 @@ function sketchLogic(cellCount) {
         drawArea.removeChild(div);
     });
 
-    for (i = 0; i < cellCount * cellCount; i++) {
+    for (i = 0; i < cellCount*cellCount; i++) {
         let divNode = document.createElement('div');
         drawArea.appendChild(divNode);
     }
 
     let cells = drawArea.querySelectorAll('div');
-    let cellDimension = drawArea.clientHeight / cellCount;
-    console.log(cells.length);
+    let cellDimension = drawArea.clientHeight/cellCount;
+    // console.log(`noOfCells: ${cells.length}`);
 
     cells.forEach((cell) => {
         cell.style.height = `${cellDimension}px`;
         cell.style.width = `${cellDimension}px`;
-        cell.style.backgroundColor = `${canvasColor.value}`;
+        cell.style.backgroundColor = canvasBgColor();
     });
 
     let mouseUpEvent = true;
 
     drawArea.addEventListener('mousedown', (e) => {
-        e.target.style.backgroundColor = '#000000';
+        e.target.style.backgroundColor = penColor();
         mouseUpEvent = false;
     });
     drawArea.addEventListener('mouseover', (e) => {
         if (mouseUpEvent === false) {
-            e.target.style.backgroundColor = '#000000';
+            e.target.style.backgroundColor = penColor();
         }
     });
     drawArea.addEventListener('mouseout', (e) => {
         if (mouseUpEvent === false) {
-            e.target.style.backgroundColor = '#000000';
+            e.target.style.backgroundColor = penColor();
         }
     });
     drawArea.addEventListener('mouseup', (e) => {
