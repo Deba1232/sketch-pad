@@ -25,8 +25,10 @@ main{
 }
 
 main .draw-space-initialization{
-    padding: 1em;
-    margin-top: 5em;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.1em;
+    padding: 1rem;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -35,8 +37,6 @@ main .draw-space-initialization{
     box-shadow: 1px 1px 15px 6px rgb(218 218 218);;
 }
 .draw-space-initialization .buttons{
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: 1.1em;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
@@ -45,10 +45,13 @@ main .draw-space-initialization{
     width: 12rem;
     position: relative;
 }
-.buttons .pen-color, .buttons .bg-color{
+.buttons input{
     height: 2.5rem;
     width: 4.5rem;
     border: 0px;
+}
+.buttons input:hover{
+    cursor: pointer;
 }
 .buttons label{
     position: absolute;
