@@ -7,11 +7,6 @@ canvasColor.addEventListener('input', () => {
 
 let drawColor = document.querySelector('.draw-space-initialization .pen-color');
 
-drawColor.addEventListener('change', (e) => {
-    refreshSketchArea();
-    sketchLogic(slider.value);
-});
-
 let slideContainer = document.querySelector('.draw-space-initialization .slidecontainer');
 let textNode = document.createElement('p');
 slideContainer.insertBefore(textNode, slideContainer.children[0]);
