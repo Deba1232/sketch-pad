@@ -1,16 +1,14 @@
 let canvasColor = document.querySelector('.draw-space-initialization .bg-color');
-canvasBgColor();
 
 canvasColor.addEventListener('input', () => {
-    canvasBgColor();
+    refreshSketchArea();
     sketchLogic(slider.value);
 });
 
 let drawColor = document.querySelector('.draw-space-initialization .pen-color');
-penColor();
 
-drawColor.addEventListener('change', () => {
-    penColor();
+drawColor.addEventListener('change', (e) => {
+    refreshSketchArea();
     sketchLogic(slider.value);
 });
 
@@ -25,6 +23,7 @@ sketchLogic(slider.value);
 slider.addEventListener('input', (e) => {
     textNode.textContent = `Grid Size: ${e.target.value} x ${e.target.value}`;
 });
-slider.addEventListener('mouseup', (e) => {
+slider.addEventListener('change', (e) => {
+    refreshSketchArea();
     sketchLogic(e.target.value);
 });

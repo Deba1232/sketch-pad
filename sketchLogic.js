@@ -10,11 +10,6 @@ function penColor() {
 
 function sketchLogic(cellCount) {
 
-    let divs = drawArea.querySelectorAll('div');
-    divs.forEach((div) => {
-        drawArea.removeChild(div);
-    });
-
     for (i = 0; i < cellCount*cellCount; i++) {
         let divNode = document.createElement('div');
         drawArea.appendChild(divNode);
@@ -25,6 +20,8 @@ function sketchLogic(cellCount) {
     // console.log(`noOfCells: ${cells.length}`);
 
     cells.forEach((cell) => {
+        cell.style.boxSizing = 'border-box';
+        cell.style.boxShadow = '0 0 1px #000000';
         cell.style.height = `${cellDimension}px`;
         cell.style.width = `${cellDimension}px`;
         cell.style.backgroundColor = canvasBgColor();
@@ -48,5 +45,12 @@ function sketchLogic(cellCount) {
     });
     drawArea.addEventListener('mouseup', (e) => {
         mouseUpEvent = true;
+    });
+}
+
+function refreshSketchArea() {
+    let divs = drawArea.querySelectorAll('div');
+    divs.forEach((div) => {
+        drawArea.removeChild(div);
     });
 }
