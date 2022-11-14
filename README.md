@@ -1,2 +1,2 @@
-# sketch-pad
-## A simple sketch pad using JS.
+# Sketch Pad
+### A simple sketch pad using JS.
