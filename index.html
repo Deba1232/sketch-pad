@@ -18,9 +18,10 @@
     <main>
 
         <div class="draw-space-initialization">
+            
             <div class="buttons">
                 <div class="pen-color-card">
-                    <input type="color" class="pen-color">
+                    <input type="color" class="pen-color" value="#000000">
                     <label for="pen-color">Pen Color</label>
                 </div>
 
@@ -30,10 +31,20 @@
                 </div>
             
             </div>
+
+            <div class="eraser">
+                <button>Eraser</button>
+            </div>
             
             <div class="slidecontainer">
                 <input type="range" min="1" max="60" value="25" class="slider">
+                <button>Toggle Grid Lines</button>
             </div>
+
+            <div class="reset">
+                <button>Reset</button>
+            </div>
+
         </div>
 
         <div class="draw-area">
