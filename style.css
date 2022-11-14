@@ -28,7 +28,7 @@ main .draw-space-initialization{
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 1.1em;
     padding: 1rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -36,6 +36,7 @@ main .draw-space-initialization{
     border-radius: 8px;
     box-shadow: 1px 1px 15px 6px rgb(218 218 218);;
 }
+
 .draw-space-initialization .buttons{
     display: flex;
     flex-direction: column;
@@ -59,6 +60,14 @@ main .draw-space-initialization{
     left: 80px;
 }
 
+.draw-space-initialization .eraser button{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    height: 2rem;
+    width: 190px;
+    border: 1px solid;
+}
+
 .draw-space-initialization .slidecontainer{
     font-size: 1.1em;
     text-align: center;
@@ -67,13 +76,26 @@ main .draw-space-initialization{
     gap: 12px;
 }
 .slidecontainer button{
-    font-size: 0.8em;
-    background-color: #00ffff;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 0.9em;
+    background-color: #000000;
+    color: #ffffff;
     height: 2rem;
     border: 1px solid;
 }
 .slidecontainer button:hover{
     cursor: pointer;
+}
+
+.draw-space-initialization .reset button{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    height: 2rem;
+    width: 190px;
+    border: 1px solid;
+}
+.draw-space-initialization .reset button:active{
+    transform: translateY(1px);
 }
 
 main .draw-area{
